@@ -1,40 +1,31 @@
 import React from "react";
+import { Header } from "../components/Header";
+import { AppImput } from "../components/AppImput";
+import { AppButton } from "../components/AppButton";
 
 const Welcome = () => {
   return (
     <div className="container">
       <div className="wrapper">
         <div className="welcome">
-          <h1>Добро пожаловать в квиз от лучшего учебного центра</h1>
+          <Header/>
           <form className="welcome__form">
-            <label className="input-wrapper" htmlFor="username">
-              Ваше имя
-              <input
-                required
-                type="text"
-                name="username"
-                id="username"
-                placeholder="Ваш ответ"
-              />
-              <span id="error-message">
-                Введите номер в правильном формате например
-              </span>
-            </label>
-            <label className="input-wrapper" htmlFor="username">
-              Ваш номер
-              <input
-                required
-                type="tel"
-                name="phone"
-                id="phone"
-                placeholder="+998 9- --- -- -- "
-                pattern="^(?:\+998)?(?:\d{2})?(?:\d{7})$"
-              />
-              <span id="error-message">Введите номер в правильном формате</span>
-            </label>
-            <button disabled type="submit" id="next-btn">
-              Далее
-            </button>
+            <AppImput 
+            imputText="Ваше имя" 
+            errorText="Введите имя в правильном формате например"
+            inputPlaceholder="Введите ваше имя"
+            imputType="text"
+            />  
+               
+            <AppImput 
+            imputText="Ваш номер" 
+            errorText="Введите номер в правильном формате например"
+            inputPlaceholder="Введите ваш номер"
+            imputType="tel"
+            />  
+            <AppButton
+            isDisabled={true}/>
+            
           </form>
         </div>
       </div>

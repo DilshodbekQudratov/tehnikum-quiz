@@ -7,15 +7,39 @@ import StepThree from "./pages/StepThree";
 import StepFour from "./pages/StepFour";
 import Thanks from "./pages/Thanks";
 import RegistrationForm from "./pages/RegistrationForm";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Test } from "./pages/Test";
 
 const App = () => {
-  return (
-    <div className="App">
-     <Welcome /> 
-     <RegistrationForm/>
-      
-    </div>
-  );
-};
+  const router = createBrowserRouter([
+  {
+    path:"/",
+    element:<RegistrationForm/>
+    
+  },
+  { 
+    path:"/step-One",
+    element:<StepOne/>,
+  },
+  { 
+    path:"/step-Two",
+    element:<StepTwo/>,
+  },
+  { 
+    path:"/step-Three",
+    element:<StepThree/>,
+  },
+  { 
+    path:"/step-Four",
+    element:<StepFour/>,
+  },
+  { 
+    path:"/thanks",
+    element:<Thanks/>,
+  },
+ 
+]); 
+  return <RouterProvider router={router}/>
+};    
 
 export default App;

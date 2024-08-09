@@ -17,6 +17,11 @@ const App = () => {
     element:<RegistrationForm/>
     
   },
+  {
+    path:"/welcome",
+    element:<Welcome/>
+    
+  },
   { 
     path:"/step-One",
     element:<StepOne/>,

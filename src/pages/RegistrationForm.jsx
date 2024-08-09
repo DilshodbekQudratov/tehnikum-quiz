@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { HeaderDZ } from "../components/HeaderDZ";
 import { AppImputDZ } from "../components/AppImputDZ";
 import { AppButtonDZ } from "../components/AppButtonDz";
+import { Link } from "react-router-dom"; // Добавьте это
+
 
 const RegistrationForm = () => {
   const [nameDz, setNameDz] = useState("");
@@ -77,7 +79,9 @@ const RegistrationForm = () => {
               inputValue={parolDz}
               setInputValue={setParolDz}
             />
+            <Link to="/Welcome">
             <AppButtonDZ isDisabled={buttonErrorDz} />
+            </Link>
           </form>
         </div>
       </div>
